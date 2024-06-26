@@ -15,10 +15,15 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SWAGGER_DEFAULTS = {
-    
-    'USE_SESSION_AUTH': False,
-    
+# Configuración para drf_yasg
+SWAGGER_SETTINGS = {
+    'USE_SESSION_AUTH': False,  # Desactiva la autenticación de sesión para Swagger
+    # Puedes agregar más configuraciones específicas de Swagger aquí
+}
+
+REDOC_SETTINGS = {
+    'USE_SESSION_AUTH': False,  # Desactiva la autenticación de sesión para Redoc
+    # Puedes agregar más configuraciones específicas de Redoc aquí
 }
 
 # Quick-start development settings - unsuitable for production
