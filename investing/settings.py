@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-wqzq$0j=4@c+&&dsn)k+^i%bz$zvtf%!5p1cau3s&)(^p)9mkq'
+SECRET_KEY = 'django-insecure-hiu0*x@aihu1sc+tx#0-xj8f#37^12i8)9ae(&rgr8+qijo$(n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['investing-adx7.onrender.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -37,10 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
     'drf_yasg',
-    'money',
-    
+    'money', 
 ]
 
 MIDDLEWARE = [
@@ -74,9 +72,18 @@ TEMPLATES = [
 WSGI_APPLICATION = 'investing.wsgi.application'
 
 
+# Database
+# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 # Import dj-database-url at the beginning of the file.
 import dj_database_url
-# Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {
     'default': dj_database_url.config(
         default='postgresql://postgres:postgres@localhost:5432/investing',
@@ -118,12 +125,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-import os
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
