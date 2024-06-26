@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-hiu0*x@aihu1sc+tx#0-xj8f#37^12i8)9ae(&rgr8+qijo$(n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['investing-adx7.onrender.com']
 
 # Example setting STATIC_ROOT to a directory named 'staticfiles' at the project's root.
 import os
