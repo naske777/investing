@@ -117,7 +117,7 @@ WSGI_APPLICATION = 'investing.wsgi.application'
 import dj_database_url
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://postgres:postgres@localhost:5432/investing_r2e2',
+        default='postgresql://postgres:postgres@localhost:5432/investing?sslmode=require',
         conn_max_age=600
     )
 }
