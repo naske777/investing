@@ -27,3 +27,10 @@ class TransactionViewSet(viewsets.ModelViewSet):
 
         # Devuelve los datos de la wallet en lugar de los de la transacción
         return Response(wallet_serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+    
+    def destroy(self, request, *pk, **kwargs):
+        transaction = self.get_object()
+        wallet_instance = transaction.wallet
+        transaction.delete()
+        wallet_serializer = WalletSerializer(wallet_instance)
+        return Response(wallet_serializer.data, status=status.HTTP_200_OK)
