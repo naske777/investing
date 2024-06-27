@@ -116,15 +116,10 @@ WSGI_APPLICATION = 'investing.wsgi.application'
 # Import dj-database-url at the beginning of the file.
 import dj_database_url
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'investing_4izo',
-        'USER': 'investing_4izo_user',
-        'PASSWORD': 'QvYsDSFqteG5ALoDb9i0jQuYyCjqs4k1',
-        'HOST': 'postgresql://investing_4izo_user:QvYsDSFqteG5ALoDb9i0jQuYyCjqs4k1@dpg-cpuou7eehbks73emefcg-a.oregon-postgres.render.com/investing_4izo',
-        'PORT': '5432',
-        
-    }
+    'default': dj_database_url.config(
+        default='postgresql://postgres:postgres@localhost:5432/investing',
+        conn_max_age=600
+    )
 }
 
 # Password validation
