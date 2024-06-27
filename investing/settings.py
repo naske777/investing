@@ -73,11 +73,13 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     'https://investing-react.onrender.com',
     'http://localhost:5173',
+    'https://investing-adx7.onrender.com',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://investing-react.onrender.com',
     'http://localhost:5173',
+    'https://investing-adx7.onrender.com',
 ]
 
 ROOT_URLCONF = 'investing.urls'
