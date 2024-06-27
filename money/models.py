@@ -36,3 +36,20 @@ class Transaction(models.Model):
 
         self.wallet.save()
         super().save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs):
+        # Revertir la operación de la transacción antes de eliminarla
+        if self.type == TransactionType.SELL:
+            # Invertir las operaciones realizadas en save
+            self._update_wallet_balance(self.moneyEntryType, self.inputCurrency)
+            self._update_wallet_balance(self.moneyExitType, -self.outputCurrency)
+        elif self.type == TransactionType.SHOP:
+            # Invertir las operaciones realizadas en save
+            self._update_wallet_balance(self.moneyExitType, self.outputCurrency)
+            self._update_wallet_balance(self.moneyEntryType, -self.inputCurrency)
+
+        # Guardar los cambios en la wallet antes de eliminar la transacción
+        self.wallet.save()
+
+        # Llamar al método delete original para eliminar la transacción
+        super().delete(*args, **kwargs)
