@@ -15,6 +15,7 @@ class Transaction(models.Model):
     outputCurrency = models.FloatField()
     moneyEntryType = models.CharField(max_length=3)
     moneyExitType = models.CharField(max_length=3)
+    price = models.FloatField()
     type = models.CharField(max_length=4, choices=TransactionType.choices)
     date = models.DateTimeField(auto_now_add=True)
 
