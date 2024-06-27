@@ -121,7 +121,7 @@ DATABASES = {
         'NAME': 'investing_4izo',
         'USER': 'investing_4izo_user',
         'PASSWORD': 'QvYsDSFqteG5ALoDb9i0jQuYyCjqs4k1',
-        'HOST': 'postgresql://investing_4izo_user:QvYsDSFqteG5ALoDb9i0jQuYyCjqs4k1@dpg-cpuou7eehbks73emefcg-a/investing_4izo',
+        'HOST': 'postgresql://investing_4izo_user:QvYsDSFqteG5ALoDb9i0jQuYyCjqs4k1@dpg-cpuou7eehbks73emefcg-a.oregon-postgres.render.com/investing_4izo',
         'PORT': '5432',
         
     }
