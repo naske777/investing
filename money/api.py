@@ -9,7 +9,7 @@ class WalletViewSet(viewsets.ModelViewSet):
     serializer_class = WalletSerializer
 
 class TransactionViewSet(viewsets.ModelViewSet):
-    queryset = Transaction.objects.all()
+    queryset = Transaction.objects.all().order_by('-date')
     serializer_class = TransactionSerializer
 
     def create(self, request, *args, **kwargs):
