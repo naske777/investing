@@ -7,6 +7,8 @@ class WalletSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class TransactionSerializer(serializers.ModelSerializer):
+    date = serializers.DateTimeField(format="%d-%m-%Y")  
+
     class Meta:
         model = Transaction
         fields = '__all__'        
